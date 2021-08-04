@@ -1,0 +1,22 @@
+<div class="col-md-12 header-toolbar">
+  <div class="row p-2 py-3">
+    <div class="col-md-7 left-section">
+      <div class="selected-item cursor-pointer">
+        <span><img class="icon mr-1" src="/assets/list.png"/></span>
+        <span class="item-text">Saved Lists</span>
+      </div>
+      <div class="un-selected-item cursor-pointer">
+        <span><img class="icon mr-1" src="https://img.icons8.com/windows/32/000000/filter.png"/></span>
+        <span class="item-text">Saved Filters</span>
+      </div>
+      <div class="un-selected-item cursor-pointer">
+        <span><img class="icon mr-1" src="https://img.icons8.com/material-sharp/24/000000/future.png"
+                   style="-webkit-transform: scaleX(-1);"/></span>
+        <span class="item-text">Search History</span>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <input (keyup)="enterKey($event)" class="form-control" placeholder="Search">
+    </div>
+  </div>
+</div>

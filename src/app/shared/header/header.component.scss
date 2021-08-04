@@ -1,0 +1,27 @@
+.header-toolbar {
+  background: #f5f5f5;
+}
+
+.left-section {
+  display: flex;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.selected-item {
+  background: #002b42;
+  color: #fff;
+  border-radius: 4px;
+  padding: 7px 14px;
+}
+
+.un-selected-item {
+  padding: 7px 14px;
+  margin-left: 10px;
+}
+
+.item-text {
+  vertical-align: middle;
+}

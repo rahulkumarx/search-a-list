@@ -1,0 +1,50 @@
+<section>
+  <app-header (search)="searchText($event)"></app-header>
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-9 left-section right-border">
+        <div class="row p-2 table-header">
+          <div class="col-md-1">Date</div>
+          <div class="col-md-5">List Name</div>
+          <div class="col-md-2 text-right">No. of Entities</div>
+          <div class="col-md-3">Actions</div>
+          <div class="col-md-1"></div>
+        </div>
+        <div *ngFor="let item of savedList | filter: searchKey; let i=index" [ngClass]="{'active': (prevIndex === i)}"
+             class="row border-top p-2 table-body">
+          <div class="col-md-1 date">
+            <span *ngIf="item?.date">{{item?.date | date: 'MMM dd'}}</span>
+            <span *ngIf="!item?.date"><img class="icon"
+                                           src="https://img.icons8.com/ios-glyphs/30/000000/synchronize.png"/></span>
+          </div>
+          <div [ngStyle]="{'color': (item?.entities) ? '':'#57b6ec'}" class="col-md-5 item-name">{{item?.name}}</div>
+          <div class="col-md-2 text-right">{{item?.entities}}</div>
+          <div class="col-md-3">
+            <span class="cursor-pointer mr-3"><img class="icon" src="https://img.icons8.com/ios/50/000000/mailing.png"/></span>
+            <span *ngIf="item?.entities" class="cursor-pointer mr-3"><img class="icon"
+                                                                          src="https://img.icons8.com/fluency-systems-regular/48/000000/share.png"/></span>
+            <span *ngIf="item?.entities" class="cursor-pointer mr-3"><img class="icon"
+                                                                          src="https://img.icons8.com/windows/32/000000/edit--v1.png"/></span>
+            <span *ngIf="item?.entities" class="cursor-pointer mr-3"><img class="icon"
+                                                                          src="https://img.icons8.com/ios/50/000000/trash--v1.png"/></span>
+          </div>
+          <div class="col-md-1 text-right pr-0">
+            <div (click)="getDetails(i, item?.description)" class="detail-btn">
+              <span>Details</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 right-section p-3">
+        <div class="col-md-12 p-3 desc-header">
+          <span>No Description yet </span>
+          <span class="add-description"> + Add Description</span>
+        </div>
+        <div *ngIf="descriptions?.length">
+          <div *ngFor="let description of descriptions" class="py-2 desc-detail">{{description?.name}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
